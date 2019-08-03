@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<nav class="navbar navbar-inverse">
+     <div class="container">
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="/">HomePage</a>
+       </div>
+       <div id="navbar" class="collapse navbar-collapse">
+         <ul class="nav navbar-nav">
+           <li><a href="/index">Show Events</a></li>
+           <li><a href="/show">Create Event</a></li>
+         </ul>
+       </div><!--/.nav-collapse -->
+     </div>
+   </nav>
+  <div class="container">
+    <div class="row">
+      <div class="jumbotron jumbotron-fluid">
+        <h1 class="page-header">Welcome to Event Page</h1>
+        <article>This is our Event Page feel free to do what you want!</article>
+      </div>
+    </div>
+
+    
+
+
+   {% endblock %}

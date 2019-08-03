@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <h1 class="page-header">Event</h1>
+        <ul class="list-group">
+            <li class="list-group-item">Id: {{ event.id }}</li>          
+            <li class="list-group-item">Name: {{ event.name }}</li>
+            <li class="list-group-item">Duedate: {% if event.dueDate %}{{ event.dueDate|date('Y-m-d H:i:s') }}{% endif %}</li>
+            <li class="list-group-item">Description: {{ event.description }}</li>
+            <li class="list-group-item">Image: {{ event.image }}</li>
+            <li class="list-group-item">Capacity: {{ event.capacity }}</li>
+            <li class="list-group-item">Email: {{ event.email }}</li>
+            <li class="list-group-item">Contact: {{ event.contact }}</li>
+            <li class="list-group-item">Adress: {{ event.adress }}</li>
+            <li class="list-group-item">Url: {{ event.uRL }}</li>
+            <li class="list-group-item">Type: {{ event.type }}</li>
+        </ul>
+
+
+            <a href="{{ 'event_index' }}" class="btn btn-default">Back to the list</a>
+            <a href="{{ path('event_edit', { 'id': event.id }) }}" class="btn btn-primary">Edit</a>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-default" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+{% endblock %}

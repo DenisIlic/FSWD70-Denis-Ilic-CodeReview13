@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="page-header">Events list</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Duedate</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Capacity</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Adress</th>
+                <th>Url</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td><a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.id }}</a></td>
+                <td>{{ event.name }}</td>
+                <td>{% if event.dueDate %}{{ event.dueDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ event.description }}</td>
+                <td>{{ event.image }}</td>
+                <td>{{ event.capacity }}</td>
+                <td>{{ event.email }}</td>
+                <td>{{ event.contact }}</td>
+                <td>{{ event.adress }}</td>
+                <td>{{ event.uRL }}</td>
+                <td>{{ event.type }}</td>
+                <td>
+                    
+                            <a href="{{ path('event_show', { 'id': event.id }) }}" class="btn btn-primary">show</a>
+                        
+                            <a href="{{ path('event_edit', { 'id': event.id }) }}" class="btn btn-default">edit</a>
+                        
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table> 
+            <a href="{{ path('event_new') }}" class="btn btn-default">Create a new event</a>
+            <a href="/" class="btn btn-default">Back to Homepage</a>
+</div>
+{% endblock %}
